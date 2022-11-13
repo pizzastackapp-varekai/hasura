@@ -19,6 +19,11 @@ actions:
       headers:
         - name: x-pizzastack-secret-key
           value: mypizzastacksecretkey
+  - name: cloudinarySignature
+    definition:
+      kind: ""
+      handler: http://host.docker.internal:8888/.netlify/functions/cloud-signature
+      forward_client_headers: true
 custom_types:
   enums: []
   input_objects:
@@ -28,4 +33,5 @@ custom_types:
     - name: AdminRegisterOutput
     - name: AdminLoginOutput
     - name: AdminGetMeOutput
+    - name: CloudinarySingatureOutput
   scalars: []
