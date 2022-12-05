@@ -1,5 +1,5 @@
 table:
-  name: categories
+  name: category
   schema: public
 array_relationships:
   - name: menu_items
@@ -11,11 +11,3 @@ array_relationships:
         remote_table:
           name: menu
           schema: public
-select_permissions:
-  - role: guest
-    permission:
-      columns:
-        - slug
-        - title
-        - id
-      filter: {}
