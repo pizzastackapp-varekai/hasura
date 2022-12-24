@@ -11,3 +11,28 @@ object_relationships:
         remote_table:
           name: menu
           schema: public
+insert_permissions:
+  - role: guest
+    permission:
+      check: {}
+      columns:
+        - order_id
+        - menu_id
+        - id
+select_permissions:
+  - role: guest
+    permission:
+      columns:
+        - id
+        - menu_id
+        - order_id
+      filter: {}
+update_permissions:
+  - role: guest
+    permission:
+      columns:
+        - order_id
+        - menu_id
+        - id
+      filter: {}
+      check: null
