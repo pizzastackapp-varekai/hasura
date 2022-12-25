@@ -6,4 +6,5 @@ select_permissions:
     permission:
       columns:
         - drinks_category
+        - id
       filter: {}
