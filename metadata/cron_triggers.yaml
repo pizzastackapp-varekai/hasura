@@ -1,5 +1,5 @@
 - name: Create fake order
-  webhook: '{{HASURA_ACTIONS_ENDPOINT}}/fake-orders'
+  webhook: '{{HASURA_ACTIONS_ENDPOINT}}/fake-orders?forceCreate={{HASURA_FAKE_ORDER_FORCE_CREATE}}'
   schedule: 0 * * * *
   include_in_metadata: true
   payload: {}
