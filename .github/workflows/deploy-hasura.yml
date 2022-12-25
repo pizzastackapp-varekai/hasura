@@ -12,8 +12,7 @@ jobs:
       - name: Install packages
         uses: borales/actions-yarn@v3.0.0
 
-      - name: deploy-hasura
+      - name: Deploy
         run: |
-          yarn hasura migrate apply --endpoint http://www.varekai-pizza.art/ --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }} 
-           --database-name default
-          yarn hasura metadata apply --endpoint http://www.varekai-pizza.art/ --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }}
+          yarn hasura migrate apply --endpoint https://hasura.varekai-pizza.art// --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }} --database-name default
+          yarn hasura metadata apply --endpoint https://hasura.varekai-pizza.art// --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }}
