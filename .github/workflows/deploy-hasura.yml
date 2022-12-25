@@ -14,6 +14,6 @@ jobs:
 
       - name: deploy-hasura
         run: |
-          hasura migrate apply --endpoint http://www.varekai-pizza.art/ --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }} 
-          --database-name default
-          hasura metadata apply --endpoint http://www.varekai-pizza.art/ --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }}
+          yarn hasura migrate apply --endpoint http://www.varekai-pizza.art/ --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }} 
+           --database-name default
+          yarn hasura metadata apply --endpoint http://www.varekai-pizza.art/ --admin-secret ${{ secrets.HASURA_ADMIN_SECRET }}
