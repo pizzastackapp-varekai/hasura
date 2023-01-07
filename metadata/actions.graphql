@@ -18,6 +18,18 @@ type Query {
   cloudinarySignature: CloudinarySingatureOutput
 }
 
+type Query {
+  customerLogin(
+    input: CustomerLoginInput!
+  ): CustomerLoginOutput
+}
+
+type Query {
+  customerVerifyCode(
+    input: CustomerVerifyCodeInput!
+  ): CustomerVerifyCodeOutput
+}
+
 input AdminRegisterInput {
   username: String!
   password: String!
@@ -26,6 +38,15 @@ input AdminRegisterInput {
 input AdminLoginInput {
   username: String!
   password: String!
+}
+
+input CustomerLoginInput {
+  phoneNumber: String!
+}
+
+input CustomerVerifyCodeInput {
+  phoneNumber: String!
+  code: String!
 }
 
 type AdminRegisterOutput {
@@ -47,5 +68,13 @@ type CloudinarySingatureOutput {
   timestamp: Int!
   publicId: String!
   signature: String!
+}
+
+type CustomerLoginOutput {
+  status: String!
+}
+
+type CustomerVerifyCodeOutput {
+  accessToken: String!
 }
 

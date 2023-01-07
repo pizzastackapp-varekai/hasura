@@ -24,14 +24,38 @@ actions:
       kind: ""
       handler: '{{HASURA_ACTIONS_ENDPOINT}}/cloud-signature'
       forward_client_headers: true
+  - name: customerLogin
+    definition:
+      kind: ""
+      handler: '{{HASURA_ACTIONS_ENDPOINT}}/customer-login'
+      headers:
+        - name: x-pizzastack-secret-key
+          value_from_env: HASURA_PIZZASTACK_SECRET
+    permissions:
+      - role: guest
+    comment: Customer login
+  - name: customerVerifyCode
+    definition:
+      kind: ""
+      handler: '{{HASURA_ACTIONS_ENDPOINT}}/customer-verify-code'
+      headers:
+        - name: x-pizzastack-secret-key
+          value_from_env: HASURA_PIZZASTACK_SECRET
+    permissions:
+      - role: guest
+    comment: Customer verify code
 custom_types:
   enums: []
   input_objects:
     - name: AdminRegisterInput
     - name: AdminLoginInput
+    - name: CustomerLoginInput
+    - name: CustomerVerifyCodeInput
   objects:
     - name: AdminRegisterOutput
     - name: AdminLoginOutput
     - name: AdminGetMeOutput
     - name: CloudinarySingatureOutput
+    - name: CustomerLoginOutput
+    - name: CustomerVerifyCodeOutput
   scalars: []

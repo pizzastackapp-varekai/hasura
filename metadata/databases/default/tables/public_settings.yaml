@@ -8,3 +8,9 @@ select_permissions:
         - drinks_category
         - id
       filter: {}
+  - role: user
+    permission:
+      columns:
+        - drinks_category
+        - id
+      filter: {}
