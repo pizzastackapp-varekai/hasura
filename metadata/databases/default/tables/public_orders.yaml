@@ -28,7 +28,7 @@ computed_fields:
         name: sum_by_order
         schema: public
 event_triggers:
-  - name: create_user_after_order_submit
+  - name: order_created
     definition:
       enable_manual: false
       insert:
